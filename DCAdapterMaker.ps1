@@ -8,3 +8,4 @@ cd C:\\ProgramData\DC\Scripts
 Invoke-WebRequest -Uri https://raw.githubusercontent.com/bschirk/dczt/main/DairycompAdapter.bat -OutFile C:\\ProgramData\DC\Scripts\DairycompAdapter.bat
 Register-ScheduledTask -Action $action -Trigger $trigger -TaskName "DCAdapter" -Description "Names DairyComp Adapter." -Principal $Principal
 .\DairycompAdapter.bat \qn
+netsh interface ip show addresses "DairyComp"
