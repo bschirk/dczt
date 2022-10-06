@@ -3,3 +3,5 @@ $action = New-ScheduledTaskAction -Execute 'C:\ProgramData\DC\Scripts\DairycompA
 $trigger = New-ScheduledTaskTrigger -AtLogon #Specify the trigger to run the script
 $Principal = New-ScheduledTaskPrincipal -UserID "$env:USERDOMAIN\$env:USERNAME" -LogonType ServiceAccount -RunLevel Highest
 Register-ScheduledTask -Action $action -Trigger $trigger -TaskName "DCAdapter" -Description "Names DairyComp Adapter." -Principal $Principal
+cd C:\\ProgramData\DC\Scripts
+.\DairycompAdapter.bat \qn
